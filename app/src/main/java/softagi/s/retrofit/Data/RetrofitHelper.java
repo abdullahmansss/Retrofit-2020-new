@@ -1,13 +1,16 @@
 package softagi.s.retrofit.Data;
 
-import java.util.List;
-
 import retrofit2.Call;
+
 import retrofit2.http.GET;
-import softagi.s.retrofit.Models.RestModel;
+import retrofit2.http.Query;
+import softagi.s.retrofit.Models.NewsModel;
 
 public interface RetrofitHelper
 {
-    @GET("restaurants")
-    Call<List<RestModel>> getRest();
+    @GET("v2/top-headlines")
+    Call<NewsModel> getNews(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey);
 }

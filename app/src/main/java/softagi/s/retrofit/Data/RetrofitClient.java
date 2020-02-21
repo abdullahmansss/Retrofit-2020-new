@@ -5,18 +5,17 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import softagi.s.retrofit.Models.RestModel;
+import softagi.s.retrofit.Models.NewsModel;
 
 public class RetrofitClient
 {
-    private static final String BASE_URL = "http://192.168.1.10:1337/";
+    private final static String BASE_URL = "http://newsapi.org/";
     private static RetrofitClient retrofitClient;
     private RetrofitHelper retrofitHelper;
 
     private RetrofitClient()
     {
-        Retrofit retrofit = new Retrofit
-                .Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -34,8 +33,8 @@ public class RetrofitClient
         return retrofitClient;
     }
 
-    public Call<List<RestModel>> getRest()
+    public Call<NewsModel> getNews(String country, String category, String apiKey)
     {
-        return retrofitHelper.getRest();
+        return retrofitHelper.getNews(country, category, apiKey);
     }
 }
