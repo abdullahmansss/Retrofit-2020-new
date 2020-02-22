@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sports"
+        android:title="sports"
+        android:icon="@drawable/ic_sport"
+        />
+
+    <item
+        android:id="@+id/science"
+        android:title="science"
+        android:icon="@drawable/ic_atom"
+        />
+
+    <item
+        android:id="@+id/tech"
+        android:title="technology"
+        android:icon="@drawable/ic_computer"
+        />
+
+</menu>
